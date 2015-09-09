@@ -14,15 +14,15 @@ var genX = 62;
 var genY = 124;
 
 while(currentGen <= (totalGen-15)) {
-  totalMW += genX;
+    totalMW += genX;
 	console.log("Generator #" + currentGen + " is on, adding " + genX + " MW, for a total of " + totalMW + " MW!");
-  currentGen++;
+    currentGen++;
 }
 
 currentGen = 5;
 
 for(var i = 5; i <= totalGen; i++) {
 	totalMW += genY;
-  console.log("Generator #" + currentGen + " is on, adding " + genY + " MW, for a total of " + totalMW + " MW!");
-  currentGen++;
+    console.log("Generator #" + currentGen + " is on, adding " + genY + " MW, for a total of " + totalMW + " MW!");
+    currentGen++;
 }
