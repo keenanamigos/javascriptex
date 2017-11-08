@@ -11,7 +11,7 @@
 const triangleHeight = 5; // 5 x 5 square 
 let hashSymbol = "#".repeat(triangleHeight);
 
-for (i = 0; i < triangleHeight; i++) {
+for (let i = 0; i < triangleHeight; i++) {
     console.log(hashSymbol);
     hashSymbol = hashSymbol.substring(0, hashSymbol.length - 1);
 }
