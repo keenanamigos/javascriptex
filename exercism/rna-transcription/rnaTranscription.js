@@ -13,6 +13,7 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
     T -> A
     A -> U
 */
+const RNA = require("./rnaNucleotides").RNANucleotides;
 
 class Transcriptor {
 	toRna(strand) {
@@ -32,16 +33,16 @@ function matchStrandWithCompliment(character) {
     
 	switch (character) {
 	case "G":
-		compliment = "C";
+		compliment = RNA.Cytosine;
 		break;
 	case "C": 
-		compliment = "G";
+		compliment = RNA.Guanine;
 		break;
 	case "T": 
-		compliment = "A";
+		compliment = RNA.Adenine;
 		break;
 	case "A": 
-		compliment = "U";
+		compliment = RNA.Uracil;
 		break;
 	default: 
 		throw Error("Invalid input DNA.");
