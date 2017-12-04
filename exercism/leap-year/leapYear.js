@@ -16,15 +16,7 @@ class Year {
      * @return {Boolean} - Return true if the property value is a leap year and false otherwise.
      */
 	isLeap() {        
-	    if (!isEvenlyDivisibleByFour(this.year)) {
-			return false;
-		} else if (isEvenlyDivisibleByFour(this.year) && !isEvenlyDivisibleByOneHundred(this.year)) {
-			return true;
-		} else if (isEvenlyDivisibleByFour(this.year) && isEvenlyDivisibleByOneHundred(this.year) && !isEvenlyDivisibleByFourHundred(this.year)) {
-			return false;
-		} else if (isEvenlyDivisibleByFour(this.year) && isEvenlyDivisibleByOneHundred(this.year) && isEvenlyDivisibleByFourHundred(this.year)) {
-			return true;
-		}
+		return validLeapYear(this.year);
 	}
 }
 
@@ -38,6 +30,11 @@ function isEvenlyDivisibleByOneHundred(year) {
 
 function isEvenlyDivisibleByFourHundred(year) {
 	return (year % 400 === 0);
+}
+
+function validLeapYear(year) {
+	return (isEvenlyDivisibleByFour(year) && !isEvenlyDivisibleByOneHundred(year)) ||
+           (isEvenlyDivisibleByFour(year) && isEvenlyDivisibleByOneHundred(year) && isEvenlyDivisibleByFourHundred(year));
 }
 
 module.exports = {
