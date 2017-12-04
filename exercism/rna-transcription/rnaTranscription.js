@@ -15,14 +15,21 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 */
 
 class Transcriptor {
-	toRna(character) {
-		return matchStrandWithCompliment(character);
+	toRna(strand) {
+		const strandArray = strand.split("");
+		let finalString = "";
+	
+		for (let character of strandArray) {
+			finalString += matchStrandWithCompliment(character);
+		}
+
+		return finalString;
 	}
 }
 
 function matchStrandWithCompliment(character) {
 	let compliment;
-
+    
 	switch (character) {
 	case "G":
 		compliment = "C";
@@ -40,7 +47,7 @@ function matchStrandWithCompliment(character) {
 		throw Error("Invalid input DNA.");
 
 	}
-
+    
 	return compliment;
 }
 
