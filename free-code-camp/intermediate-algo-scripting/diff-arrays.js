@@ -1,4 +1,4 @@
-/**
+/** Problem:
  * Compare two arrays and return a new array with any items only found in one of the two given arrays, but not both. 
  * In other words, return the symmetric difference of the two arrays.
  */
@@ -7,21 +7,21 @@ function diffArray(arr1, arr2) {
     const newArr = removeDuplicates(arr1.concat(arr2));
     // Same, same; but different.
     return newArr;
-  }
+}
   
-  function removeDuplicates(array) {
+function removeDuplicates(array) {
     const uniqueValues = [];
-    
+
     for (let i = 0; i < array.length; i++) {
-      if (array.indexOf(array[i]) === array.lastIndexOf(array[i])) {
+        if (array.indexOf(array[i]) === array.lastIndexOf(array[i])) {
         uniqueValues.push(array[i]);
-      }
+        }
     }
-    
+
     return uniqueValues;
-  }
+}
   
-  diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
 /** Test Cases */
 

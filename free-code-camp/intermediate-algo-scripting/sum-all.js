@@ -4,17 +4,20 @@
  * The lowest number will not always come first.
  */
 
+// Solution
 function sumAll(arr) {
-    const high = Math.max(...arr);
-    const low = Math.min(...arr);
-    let sum = 0;
-    
-    for (let i = low; i <= high; i++) {
-      sum += i;
-    }
-    
-    return sum;
+  const high = Math.max(...arr);
+  const low = Math.min(...arr);
+  let sum = 0;
+
+  for (let i = low; i <= high; i++) {
+    sum += i;
   }
+
+  return sum;
+}
+
+  console.log(sumAll([1, 4]));
 
  /** Test Cases
   * sumAll([1, 4]) should return a number.
