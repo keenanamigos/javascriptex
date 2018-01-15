@@ -5,7 +5,6 @@
 
 function diffArray(arr1, arr2) {
     const newArr = removeDuplicates(arr1.concat(arr2));
-    // Same, same; but different.
     return newArr;
 }
   
@@ -14,7 +13,7 @@ function removeDuplicates(array) {
 
     for (let i = 0; i < array.length; i++) {
         if (array.indexOf(array[i]) === array.lastIndexOf(array[i])) {
-        uniqueValues.push(array[i]);
+            uniqueValues.push(array[i]);
         }
     }
 
