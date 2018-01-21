@@ -3,31 +3,39 @@
  * Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
  */
 
+// Solution
+const HTMLEntityMappings = {
+    "Ampersand": "&amp;",
+    "GreaterThan": "&gt;",
+    "LessThan": "&lt;",
+    "DoubleQuote": "&quot;",
+    "Apostrophe": "&apos;"
+};
+
 function convertHTML(str) {
     // &colon;&rpar;
-    const strArray = str.split('');
-    str = replaceChars(strArray);
+    str = setEntities(str.split(''));
 
     return str;
 }
 
-function replaceChars(array) {
-    for (let i = 0; i < array.length; i++) {
+function setEntities(array) {
+    for (let i = 0, length = array.length; i < length; i++) {
         switch(array[i]) {
         case "&":
-            array[i] = "&amp;";
+            array[i] = HTMLEntityMappings.Ampersand;
             break;
         case ">":
-            array[i] = "&gt;";
+            array[i] = HTMLEntityMappings.GreaterThan;
             break;
         case "<":
-            array[i] = "&lt;";
+            array[i] = HTMLEntityMappings.LessThan;
             break;
         case "\"":
-            array[i] = "&quot;";
+            array[i] = HTMLEntityMappings.DoubleQuote;
             break;
         case "'":
-            array[i] = "&apos;";
+            array[i] = HTMLEntityMappings.Apostrophe;
             break;
         default:
             array[i] = array[i];
